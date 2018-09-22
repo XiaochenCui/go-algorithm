@@ -22,7 +22,7 @@ func NewGraph() (graph *Graph) {
 	return
 }
 
-func (g Graph) InitFromFile(file string) {
+func (g *Graph) InitFromFile(file string) {
 	absPath, _ := filepath.Abs(file)
 	f, err := os.Open(absPath)
 	if err != nil {
@@ -45,7 +45,7 @@ func (g Graph) InitFromFile(file string) {
 	log.Debug(g)
 }
 
-func (g Graph) addEdge(v1, v2 int) {
+func (g *Graph) addEdge(v1, v2 int) {
 	g.table[v1] = append(g.table[v1], v2)
 	g.table[v2] = append(g.table[v2], v1)
 }
