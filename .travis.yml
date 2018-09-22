@@ -1,0 +1,12 @@
+language: go
+
+go:
+  - "1.11"
+  - master
+
+script:
+  go test ./...
+
+notifications:
+  email: false
+  slack: gimme-gimme-gimme:uY4HHVgymLh2iLILqZahaOPK
